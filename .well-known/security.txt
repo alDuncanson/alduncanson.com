@@ -1,0 +1,4 @@
+Contact: https://github.com/alDuncanson
+Expires: 2027-08-02T00:00:00Z
+Preferred-Languages: en
+Canonical: https://alduncanson.com/.well-known/security.txt
