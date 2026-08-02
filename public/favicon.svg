@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .background { fill: #fff; }
+    .mark { fill: #111; }
+    .write { fill: none; stroke: #111; }
+
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #111; }
+      .mark { fill: #fff; }
+      .write { stroke: #fff; }
+    }
+  </style>
+
+  <rect class="background" width="32" height="32" rx="4"/>
+  <g class="mark">
+    <rect x="5" y="10" width="3" height="3"/>
+    <rect x="5" y="19" width="3" height="3"/>
+  </g>
+  <path
+    class="write"
+    d="M11 11l3 12 4.5-8 4.5 8 3-12"
+    stroke-width="3"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+</svg>
