@@ -1,6 +1,8 @@
 http://localhost:8080 {
 	root * .
 	encode zstd gzip
+	header /coffee X-Teapot "short and stout"
+	respond /coffee "I'm a teapot." 418
 	handle_errors 404 {
 		rewrite /404.html
 		file_server
