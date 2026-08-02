@@ -1,0 +1,10 @@
+/* AUTHOR */
+
+Al Duncanson
+GitHub: https://github.com/alDuncanson
+
+/* SITE */
+
+Standards: HTML5, CSS, HTTP
+Server: Caddy
+Source: https://github.com/alDuncanson/alduncanson.com
