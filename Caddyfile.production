@@ -1,5 +1,5 @@
 alduncanson.com {
-	root * /var/www/html
+	root /var/www/html
 	encode zstd gzip
 	header /coffee X-Teapot "short and stout"
 	respond /coffee "I'm a teapot." 418
