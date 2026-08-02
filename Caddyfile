@@ -1,5 +1,5 @@
 http://localhost:8080 {
-	root * ./public
+	root ./public
 	encode zstd gzip
 	header /coffee X-Teapot "short and stout"
 	respond /coffee "I'm a teapot." 418
