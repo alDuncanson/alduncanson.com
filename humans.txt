@@ -1,10 +1,25 @@
-/* AUTHOR */
+/* HUMAN */
 
 Al Duncanson
 GitHub: https://github.com/alDuncanson
+X: https://x.com/al_duncanson
+LinkedIn: https://www.linkedin.com/in/al-duncanson/
 
-/* SITE */
+/* COLOPHON */
 
-Standards: HTML5, CSS, HTTP
-Server: Caddy
+Editor: Neovim
+Development environment: Nix
+Coding agent: Amp
+Standards: HTML5, CSS, HTTP, XML
+Web server: Caddy
+Compression: Zstandard, gzip
+Frameworks: none
 Source: https://github.com/alDuncanson/alduncanson.com
+
+/* MACHINE */
+
+Provider: Google Compute Engine
+Instance: e2-micro
+Resources: 2 vCPUs, 1 GB memory
+Processor: AMD Rome
+Architecture: x86_64
