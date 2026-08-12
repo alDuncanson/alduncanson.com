@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <style>
-    .background { fill: #fff; }
-    .mark { fill: #111; }
-    .write { fill: #111; }
+    .background { fill: #f3ead3; }
+    .mark { fill: #211a14; }
+    .write { fill: #211a14; }
 
     @media (prefers-color-scheme: dark) {
-      .background { fill: #111; }
-      .mark { fill: #fff; }
-      .write { fill: #fff; }
+      .background { fill: #1c1511; }
+      .mark { fill: #f4e6c8; }
+      .write { fill: #f4e6c8; }
     }
   </style>
 

@@ -1,9 +1,132 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
+
+  --background: #f3ead3;
+  --foreground: #211a14;
+  --link: #68351f;
+  --muted: #514438;
+  --accent: #70402b;
+  --emphasis: #842f20;
+  --link-background: #efe0c0;
+  --code-background: #e6d9bc;
+  --rule: #9b8269;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: dark;
+    --background: #1c1511;
+    --foreground: #f4e6c8;
+    --link: #e89a5b;
+    --muted: #c4ad8e;
+    --accent: #d9a06f;
+    --emphasis: #f08a70;
+    --link-background: #251b16;
+    --code-background: #2a2019;
+    --rule: #806a57;
   }
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-serif, Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 68ch;
+  min-height: 100vh;
+  padding: clamp(2rem, 7vw, 6rem) clamp(1.25rem, 5vw, 3rem);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  letter-spacing: -0.025em;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+a {
+  background-color: var(--link-background);
+  border-radius: 0.12em;
+  box-decoration-break: clone;
+  color: var(--link);
+  margin-inline: -0.08em;
+  padding-inline: 0.08em;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+  -webkit-box-decoration-break: clone;
+}
+
+a:visited {
+  background-color: var(--background);
+  color: var(--emphasis);
+  text-decoration-color: var(--emphasis);
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+a:focus-visible {
+  border-radius: 0.1em;
+  outline: 0.18em solid var(--accent);
+  outline-offset: 0.18em;
+}
+
+code,
+pre {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+}
+
+code {
+  background: var(--code-background);
+  border-radius: 0.15em;
+  padding: 0.1em 0.25em;
+}
+
+pre {
+  background: var(--code-background);
+  border-left: 0.2rem solid var(--accent);
+  line-height: 1.5;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+blockquote {
+  border-left: 0.2rem solid var(--rule);
+  color: var(--muted);
+  margin-inline: 0;
+  padding-inline: 1rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin-block: 3rem;
+}
+
+::selection {
+  background: var(--emphasis);
+  color: var(--background);
 }
