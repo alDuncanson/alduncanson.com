@@ -10,11 +10,78 @@
   </head>
   <body>
     <header>
-      <h1>Al Duncanson</h1>
+      <h1>This is a website.</h1>
     </header>
 
     <main>
-      <p>This site is under construction.</p>
+      <p>
+        It is a small collection of documents written by
+        <a href="https://github.com/alDuncanson">Al Duncanson</a> and connected
+        by hyperlinks. It has no application to install, account to create, or
+        notification bell to ring. You can simply read it.
+      </p>
+
+      <p>
+        Eventually, most of what lives here will be <a href="#writing">writing</a>:
+        short thoughts, technical explanations, advice held provisionally, and
+        things learned by looking more closely. There will also be small
+        <a href="#experiments">experiments</a> with browsers, servers, and the
+        protocols joining them together.
+      </p>
+
+      <h2 id="writing">Writing for people</h2>
+
+      <p>
+        These pages should be comfortable to read, quick to load, and useful
+        without JavaScript or even CSS. The visual design uses warm browns and
+        creams, but the structure is ordinary semantic <abbr title="HyperText Markup Language">HTML</abbr>.
+      </p>
+
+      <blockquote>
+        <p>
+          Simple does not have to mean sterile. A document can have character
+          without demanding more of its reader.
+        </p>
+      </blockquote>
+
+      <p>
+        Links remain underlined, <em>emphasis remains emphasis</em>, and
+        <strong>important words remain unambiguous</strong>. Even a small piece
+        of inline code such as <code>printf 'hello, web\n'</code> should sit
+        comfortably inside a sentence.
+      </p>
+
+      <h2 id="experiments">Learning from the machinery</h2>
+
+      <p>
+        The site itself is part of the subject. Curious readers are invited to
+        inspect its source, request its documents in different forms, and see
+        what the server says when asked a direct question.
+      </p>
+
+      <pre><code>curl --include https://alduncanson.com/
+curl --compressed https://alduncanson.com/humans.txt
+curl https://alduncanson.com/coffee</code></pre>
+
+      <p>Some principles, while this place takes shape:</p>
+
+      <ul>
+        <li>Documents should have durable, meaningful addresses.</li>
+        <li>The source should reward inspection.</li>
+        <li>HTTP features should be used deliberately and explained openly.</li>
+        <li>A page should justify every byte it asks someone to download.</li>
+      </ul>
     </main>
+
+    <footer>
+      <hr>
+      <p>
+        <small>
+          200 OK · HTML · no scripts ·
+          <a href="/humans.txt">humans.txt</a> ·
+          <a href="https://github.com/alDuncanson/alduncanson.com">source</a>
+        </small>
+      </p>
+    </footer>
   </body>
 </html>
