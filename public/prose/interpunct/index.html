@@ -9,6 +9,95 @@
 	</head>
 	<body>
 		<h1>Interpunct</h1>
-		<p>...formulating</p>
+		<p>While writing the hypertext for the footer on my <a href="/">homepage</a>, I wondered not just what character <i>can</i>
+			I use for separation, but what character <i>should</i>
+			I be using?</p>
+		<p>A pipe? Perhaps:</p>
+		<footer>
+			<hr>
+			<a href="/sitemap.xml">sitemap</a>
+			|
+			<a href="https://github.com/alDuncanson/alduncanson.com">source</a>
+			|
+			<a href="/humans.txt">humans.txt</a>
+			|
+			<a href="/coffee">&#x2615;&#xFE0E;</a>
+			|
+			<a href="https://github.com/alDuncanson/">code</a>
+			<hr>
+		</footer>
+		<p>Sure, that <i>could</i>
+			work—but, it doesn't <i>feel</i>
+			right.</p>
+		<p>Maybe a bullet:</p>
+		<footer>
+			<hr>
+			<a href="/sitemap.xml">sitemap</a>
+			&bull;
+			<a href="https://github.com/alDuncanson/alduncanson.com">source</a>
+			&bull;
+			<a href="/humans.txt">humans.txt</a>
+			&bull;
+			<a href="/coffee">&#x2615;&#xFE0E;</a>
+			&bull;
+			<a href="https://github.com/alDuncanson/">code</a>
+			<hr>
+		</footer>
+		<p>That's closer to what I wanted but, that didn't feel right either, bullets are for delimiting items in <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul">unordered lists.</a></p>
+		<p>They don't look right when used this way. Too big and too bold. I wanted something a little quieter, something a bit cleaner, a bullet—<i>refined</i>.</p>
+		<p>A dot! That's what I want:</p>
+		<footer>
+			<hr>
+			<a href="/sitemap.xml">sitemap</a>
+			.
+			<a href="https://github.com/alDuncanson/alduncanson.com">source</a>
+			.
+			<a href="/humans.txt">humans.txt</a>
+			.
+			<a href="/coffee">&#x2615;&#xFE0E;</a>
+			.
+			<a href="https://github.com/alDuncanson/">code</a>
+			<hr>
+		</footer>
+		<p>Getting closer.</p>
+		<p>A period gives me a dot, but it didn't look right either, I wanted the dot that the period gives me visually, but up a little bit, in the middle… a <i>middle-dot</i>.</p>
+		<p>I consulted the all-powerful search engine: "how to type middle dot", and was guided, rather reluctantly by the <s>dreaded</s>
+			"AI Overview" (the summarization of the results typically returned by a search engine, <i>this is 2026</i>) to type <code>Option + Shift + 9</code>
+			(I'm on MacOS, for those confused by <code>Option</code>).</p>
+		<p>I decided to trust the instructions, regardless of what could be said of their credibility and accuracy right now (again, <b><i>it's 2026</i></b>
+			<a href="https://www.merriam-webster.com/slang/iykyk">iykyk</a>).</p>
+		<p>Seemed simple enough, <kbd>option</kbd>
+			+ <kbd>shift</kbd>
+			+ <kbd>9</kbd>:</p>
+		<pre><code>9</code></pre>
+		<p>Hmm, that didn't work. Maybe I typed it incorrectly.</p>
+		<p><i>Staring at my fingers as I carefully press each key sequentially, hands of a surgeon, focused, I type again</i>
+		<kbd>option</kbd>
+		+ <kbd>shift</kbd>
+		+ <kbd>9</kbd>:</p>
+		<pre><code>9</code></pre>
+		<p><i>Blast!</i></p>
+		<p>Alright, maybe it's my editor (<a href="https://neovim.io/">Neovim</a>, <a href="https://knowyourmeme.com/memes/btw-i-use-arch">btw</a>).</p>
+		<p>I consulted the oracle again in my caveman-esque pre-AI algorithmic dialect—<a href="https://www.youtube.com/watch?v=DP8qe2Qo2-s">keywordese</a>: "how to type middle dot <b>neovim</b>".</p>
+		<p>Ha, <i>of course</i>.
+			The wonderful community of builders, users, and maintainers of Neovim already have a solution for my problem, <a href="https://neovim.io/doc/user/digraph/">digraphs</a>:</p>
+		<blockquote>
+			Digraphs are used to enter characters that normally cannot be entered by
+			an ordinary keyboard.  These are mostly printable non-ASCII characters.
+		</blockquote>
+
+		<footer>
+			<hr>
+			<a href="/sitemap.xml">sitemap</a>
+			·
+			<a href="https://github.com/alDuncanson/alduncanson.com">source</a>
+			·
+			<a href="/humans.txt">humans.txt</a>
+			·
+			<a href="/coffee">&#x2615;&#xFE0E;</a>
+			·
+			<a href="https://github.com/alDuncanson/">code</a>
+			<hr>
+		</footer>
 	</body>
 </html>
