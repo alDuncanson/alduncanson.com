@@ -29,7 +29,7 @@
 html {
   background: var(--background);
   color: var(--foreground);
-  font-family: ui-serif, Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  font-family: ui-serif,"Georgia", serif;
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   line-height: 1.65;
   text-rendering: optimizeLegibility;
