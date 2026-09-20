@@ -1,19 +1,17 @@
 /* HUMAN */
 
 Webmaster: Al Duncanson
-GitHub: https://github.com/alDuncanson
-X: https://x.com/al_duncanson
-LinkedIn: https://www.linkedin.com/in/al-duncanson/
+Code: https://github.com/alDuncanson
+Professional networking profile: https://www.linkedin.com/in/al-duncanson/
 
 /* COLOPHON */
 
 Editor: Neovim
+Technologies: HTML, CSS
 Development environment: Nix
 Coding agent: Amp
-Standards: HTML5, CSS, HTTP, XML
 Web server: Caddy
 Compression: Zstandard, gzip
-Frameworks: none
 Source: https://github.com/alDuncanson/alduncanson.com
 
 /* MACHINE */
