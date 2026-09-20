@@ -90,6 +90,7 @@ a:focus-visible {
 }
 
 code,
+kbd,
 pre {
   font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
 }
@@ -98,6 +99,20 @@ code {
   background: var(--code-background);
   border-radius: 0.15em;
   padding: 0.1em 0.25em;
+}
+
+kbd {
+  background: var(--code-background);
+  border: 1px solid var(--rule);
+  border-radius: 0.3em;
+  box-shadow: 0 0.14em 0 var(--rule);
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.3em 0.45em 0.22em;
+  vertical-align: 0.08em;
+  white-space: nowrap;
 }
 
 pre {
