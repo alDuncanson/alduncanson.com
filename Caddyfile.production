@@ -1,6 +1,14 @@
 alduncanson.com {
 	root /var/www/html
 	encode zstd gzip
+
+	redir /prose/interpunct/mojibake /prose/interpunct/mojibake/ 308
+	route /prose/interpunct/mojibake/ {
+		rewrite * /prose/interpunct/index.html
+		header Content-Type "text/html; charset=iso-8859-1"
+		file_server
+	}
+
 	header /coffee X-Teapot "short and stout"
 	respond /coffee "I'm a teapot." 418
 	handle_errors 404 {
