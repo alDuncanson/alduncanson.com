@@ -1,0 +1,18 @@
+# shellcheck shell=bash
+# Loads the flake's development shell, as `nix develop` would, into login shells that start in the
+# repository root. .agents/setup sources this file from ~/.bash_profile in Amp orbs.
+
+if [[ -z "${IN_NIX_SHELL:-}" ]] && command -v nix >/dev/null; then
+	_dev_shell_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+	if [[ . -ef "$_dev_shell_root" ]] &&
+		_dev_shell_env="$(nix print-dev-env --option warn-dirty false "$_dev_shell_root")"; then
+		_dev_shell_saved_tmp="$(declare -p TMP TMPDIR TEMP TEMPDIR 2>/dev/null)"
+		# The shellHook prints usage hints; keep them out of command output.
+		eval "$_dev_shell_env" >/dev/null
+		# print-dev-env points the temp variables at a new directory that only `nix develop` removes.
+		rm -rf -- "$NIX_BUILD_TOP"
+		unset NIX_BUILD_TOP TMP TMPDIR TEMP TEMPDIR
+		eval "$_dev_shell_saved_tmp"
+	fi
+	unset _dev_shell_root _dev_shell_env _dev_shell_saved_tmp
+fi

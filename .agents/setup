@@ -2,8 +2,12 @@
 # Prepare an Amp orb: realize the Nix development shell and load it into login shells.
 set -euo pipefail
 
+if [[ "${AMP_ORB:-}" != 1 ]]; then
+	echo "Not in an Amp orb; leaving this machine unchanged." >&2
+	exit 0
+fi
+
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-nix_profile="$HOME/.nix-profile"
 
 step() {
 	local name="$1"
@@ -16,7 +20,7 @@ step() {
 
 if ! command -v nix >/dev/null 2>&1; then
 	# shellcheck disable=SC1091
-	source "$nix_profile/etc/profile.d/nix.sh"
+	source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 
 # Fetch Caddy and the rest of the dev shell into the Nix store so the snapshot contains them.
@@ -25,16 +29,16 @@ realize_dev_shell() {
 }
 step "Realize Nix development shell" realize_dev_shell
 
-# Amp and supervised services run in non-interactive login shells. Load the flake's dev shell
-# there, the same environment `nix develop` provides, without spawning a nested shell.
-profile_marker="# alduncanson.com Nix development shell"
-if ! grep -Fqx "$profile_marker" "$HOME/.bash_profile" 2>/dev/null; then
-	echo "==> Add Nix development shell hook to ~/.bash_profile"
-	cat >>"$HOME/.bash_profile" <<PROFILE
-
-$profile_marker
-if [[ -z "\${IN_NIX_SHELL:-}" && "\${PWD}" == "$repo_root" ]]; then
-	eval "\$("$nix_profile/bin/nix" print-dev-env --option warn-dirty false "$repo_root")" >/dev/null
-fi
-PROFILE
+# Amp and supervised services run in non-interactive login shells. Source .agents/dev-shell there
+# so shells started in the repository root get the flake's dev shell without a nested shell.
+profile="$HOME/.bash_profile"
+marker="# alduncanson.com Nix development shell"
+hook="$(printf '%s\nif [[ -f %q ]]; then\n\tsource %q\nfi' "$marker" "$repo_root/.agents/dev-shell" "$repo_root/.agents/dev-shell")"
+if [[ "$(sed -n "/^$marker\$/,/^fi\$/p" "$profile" 2>/dev/null)" != "$hook" ]]; then
+	echo "==> Install Nix development shell hook in ~/.bash_profile"
+	# Replace any earlier version of the hook, including one for another checkout path.
+	if [[ -f "$profile" ]]; then
+		sed -i "/^$marker\$/,/^fi\$/d" "$profile"
+	fi
+	printf '\n%s\n' "$hook" >>"$profile"
 fi
