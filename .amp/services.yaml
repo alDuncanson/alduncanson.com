@@ -1,0 +1,9 @@
+services:
+  site:
+    command: caddy run --config Caddyfile
+    port: 8080
+    env:
+      # Answer any Host header so the portal proxy's hostname reaches the site.
+      SITE_ADDRESS: "http://:8080"
+    portal:
+      title: alduncanson.com

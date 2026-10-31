@@ -1,4 +1,4 @@
-http://localhost:8080 {
+{$SITE_ADDRESS:http://localhost:8080} {
 	root ./public
 	encode zstd gzip
 
