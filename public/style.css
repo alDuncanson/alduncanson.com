@@ -10,6 +10,7 @@
   --link-background: #efe0c0;
   --code-background: #e6d9bc;
   --rule: #9b8269;
+  --shadow: rgb(33 26 20 / 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,6 +24,7 @@
     --link-background: #251b16;
     --code-background: #2a2019;
     --rule: #806a57;
+    --shadow: rgb(0 0 0 / 0.55);
   }
 }
 
@@ -126,6 +128,35 @@ pre {
 pre code {
   background: none;
   padding: 0;
+}
+
+mark {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 0.15em;
+  color: inherit;
+}
+
+/* A little window: the transparent top border is a title bar painted by the
+   backgrounds, with three dots in place of window controls. */
+iframe {
+  --bar: 1.75rem;
+
+  background:
+    radial-gradient(circle, var(--emphasis) 0.22rem, transparent 0.27rem) 0.4rem 0 / 0.75rem var(--bar) no-repeat,
+    radial-gradient(circle, var(--accent) 0.22rem, transparent 0.27rem) 1.15rem 0 / 0.75rem var(--bar) no-repeat,
+    radial-gradient(circle, var(--rule) 0.22rem, transparent 0.27rem) 1.9rem 0 / 0.75rem var(--bar) no-repeat,
+    linear-gradient(var(--code-background), var(--code-background)) 0 0 / 100% var(--bar) no-repeat,
+    var(--background);
+  background-origin: border-box;
+  border: 0;
+  border-radius: 0.5rem;
+  border-top: var(--bar) solid transparent;
+  box-shadow:
+    0 0 0 1px var(--rule),
+    0 0.75rem 1.5rem -0.75rem var(--shadow);
+  display: block;
+  margin-block: 1.5rem;
+  width: 100%;
 }
 
 blockquote {
